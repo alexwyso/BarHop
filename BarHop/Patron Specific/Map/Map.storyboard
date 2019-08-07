@@ -37,6 +37,33 @@
             </objects>
             <point key="canvasLocation" x="849" y="82"/>
         </scene>
+        <!--Map Menu View Controller-->
+        <scene sceneID="Zpj-av-2XW">
+            <objects>
+                <viewController storyboardIdentifier="MapMenu" id="mEh-sr-ETd" customClass="MapMenuViewController" customModule="BarHop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwL-8m-He5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-0N-R1K">
+                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TIj-0N-R1K" firstAttribute="width" secondItem="kwL-8m-He5" secondAttribute="width" multiplier="0.75" id="4JY-uC-dUx"/>
+                            <constraint firstAttribute="bottom" secondItem="TIj-0N-R1K" secondAttribute="bottom" id="MPB-Gb-TtR"/>
+                            <constraint firstItem="TIj-0N-R1K" firstAttribute="leading" secondItem="orn-1K-bie" secondAttribute="leading" id="xca-28-vIP"/>
+                            <constraint firstItem="TIj-0N-R1K" firstAttribute="top" secondItem="kwL-8m-He5" secondAttribute="top" id="zIy-ho-Kb3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="orn-1K-bie"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPL-mz-m7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.9710144927537" y="81.696428571428569"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cy1-ao-kB3">
             <objects>

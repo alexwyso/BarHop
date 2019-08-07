@@ -8,23 +8,33 @@
 
 import UIKit
 
+protocol HandleMenuDismissProtocol {
+    func menuDismissed()
+}
+
 class MapMenuViewController: UIViewController {
+    
+    let dimEffectView = UIView()
+    
+    var delegate: HandleMenuDismissProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dimEffectView.backgroundColor = .clear
+        dimEffectView.frame = view.bounds
+        dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dimEffectView.alpha = 1
+        view.addSubview(dimEffectView)
+        //view.sendSubviewToBack(dimEffectView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        var touch: UITouch? = touches.first
+        if touch?.view == dimEffectView {
+            self.dismiss(animated: true, completion: nil)
+            self.delegate?.menuDismissed()
+        }
     }
-    */
-
 }

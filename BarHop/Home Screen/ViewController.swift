@@ -34,5 +34,9 @@ class ViewController: UIViewController {
         nextViewController.modalPresentationStyle = .overCurrentContext
         present(nextViewController, animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
