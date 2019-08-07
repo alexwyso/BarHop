@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var signInStackView: UIStackView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         signInStackView.alpha = 0
         signInStackView.isHidden = true
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -31,12 +36,25 @@ class ViewController: UIViewController {
     @IBAction func loginPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Map", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
+        
+        getLocationAuthorization()
         nextViewController.modalPresentationStyle = .overCurrentContext
         present(nextViewController, animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func getLocationAuthorization() {
+        // Ask for Authorisation from the User.
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
 }
 

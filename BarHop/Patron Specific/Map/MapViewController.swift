@@ -7,18 +7,51 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController, HandleMenuDismissProtocol {
+class MapViewController: UIViewController, HandleMenuDismissProtocol, HandleLocationDismissProtocol, CLLocationManagerDelegate, MKMapViewDelegate {
     
     let dimEffectView = UIView()
-
+    
+    var locationManager: CLLocationManager!
+    
+    @IBOutlet weak var map: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.white,
              NSAttributedString.Key.font: UIFont(name: "HammersmithOne-Regular", size: 28)!]
         let img = UIImage(named: "Screen-Shot-2014-12-02-at-11.14.42.png")
         setUpProfileButton(img: img!)
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            map.delegate = self
+            map.showsUserLocation = true
+            map.isScrollEnabled = true
+            map.isZoomEnabled = true
+        }
+        
+        dimEffectView.backgroundColor = .black
+        dimEffectView.frame = view.bounds
+        dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dimEffectView.alpha = 0
+        view.addSubview(dimEffectView)
     }
     
     func setUpProfileButton(img: UIImage) {
@@ -46,11 +79,6 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol {
         let storyboard = UIStoryboard(name: "Map", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapMenu")
         
-        dimEffectView.backgroundColor = .black
-        dimEffectView.frame = view.bounds
-        dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        dimEffectView.alpha = 0
-        view.addSubview(dimEffectView)
         UIView.animate(withDuration: 0.5, animations: {
             self.dimEffectView.alpha = 0.6
             //self.navigationController?.navigationBar.alpha = 0.3
@@ -66,8 +94,53 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol {
     func menuDismissed() {
         UIView.animate(withDuration: 0.5, animations: {
             self.dimEffectView.alpha = 0
-            //self.navigationController?.navigationBar.alpha = 0.3
+        })
+    }
+    
+    func locationDismissed() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dimEffectView.alpha = 0
         })
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.0025, longitudeDelta: 0.0025))
+            map.setRegion(region, animated: false)
+            
+            let bar = CLLocationCoordinate2D(latitude: location.coordinate.latitude + 0.0002, longitude: location.coordinate.longitude + 0.0002)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = bar
+            annotation.title = "Smokey Joe's"
+            map.addAnnotation(annotation)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapBottom")
+        
+        nextViewController.modalPresentationStyle = .overCurrentContext
+        if let nextViewController = nextViewController as? MapBottomDetailsViewController {
+            nextViewController.delegate = self
+        }
+        present(nextViewController, animated: true, completion: nil)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = false
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
 }

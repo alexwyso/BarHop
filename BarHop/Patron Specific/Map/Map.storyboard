@@ -32,6 +32,9 @@
                         <viewLayoutGuide key="safeArea" id="AE8-lw-xSm"/>
                     </view>
                     <navigationItem key="navigationItem" title="BarHop" id="Ix5-A0-QdG"/>
+                    <connections>
+                        <outlet property="map" destination="JhN-qg-ckH" id="YQp-kd-aU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pc3-36-Oo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,6 +66,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPL-mz-m7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="81.696428571428569"/>
+        </scene>
+        <!--Map Bottom Details View Controller-->
+        <scene sceneID="xwe-my-bK9">
+            <objects>
+                <viewController storyboardIdentifier="MapBottom" id="nIU-mZ-6jc" customClass="MapBottomDetailsViewController" customModule="BarHop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZc-TE-7sC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3Y-wQ-Lbc">
+                                <rect key="frame" x="0.0" y="696" width="414" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWw-HU-TcP">
+                                        <rect key="frame" x="30" y="120" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.2611125708" green="0.52945274109999996" blue="0.76473993060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8Bh-ki-sPc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Check In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Smokey Joe's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDF-jc-P4a">
+                                        <rect key="frame" x="30" y="8" width="239" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.90317315924657537" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sWw-HU-TcP" secondAttribute="bottom" constant="30" id="Qrn-s2-AF1"/>
+                                    <constraint firstItem="sWw-HU-TcP" firstAttribute="leading" secondItem="j3Y-wQ-Lbc" secondAttribute="leading" constant="30" id="WL1-VK-4ei"/>
+                                    <constraint firstAttribute="trailing" secondItem="sWw-HU-TcP" secondAttribute="trailing" constant="30" id="gPi-Ut-GqN"/>
+                                    <constraint firstAttribute="height" constant="200" id="mIb-Ir-7cy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="j3Y-wQ-Lbc" secondAttribute="bottom" id="5q6-X7-UNv"/>
+                            <constraint firstItem="j3Y-wQ-Lbc" firstAttribute="leading" secondItem="Q0o-Xs-Zkn" secondAttribute="leading" id="6yD-hE-8Ut"/>
+                            <constraint firstItem="j3Y-wQ-Lbc" firstAttribute="trailing" secondItem="Q0o-Xs-Zkn" secondAttribute="trailing" id="GdD-fp-erx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q0o-Xs-Zkn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTE-Hs-V72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2433.3333333333335" y="81.696428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cy1-ao-kB3">
