@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,6 @@
 		6AF7467D22FA1A6100D598A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF7467B22FA1A6100D598A3 /* LaunchScreen.storyboard */; };
 		6AF7468822FA1A6100D598A3 /* BarHopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7468722FA1A6100D598A3 /* BarHopTests.swift */; };
 		6AF7469322FA1A6100D598A3 /* BarHopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7469222FA1A6100D598A3 /* BarHopUITests.swift */; };
-		6AF746A122FA1AA900D598A3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF746A022FA1AA900D598A3 /* SignInViewController.swift */; };
-		6AF746A322FA1AC000D598A3 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF746A222FA1AC000D598A3 /* SignIn.storyboard */; };
 		6AF746A722FA1D1B00D598A3 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF746A622FA1D1B00D598A3 /* Map.storyboard */; };
 		6AF746A922FA1D2A00D598A3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF746A822FA1D2A00D598A3 /* MapViewController.swift */; };
 		6AF746AC22FA1D8A00D598A3 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF746AB22FA1D8A00D598A3 /* MapMenuViewController.swift */; };
@@ -73,8 +71,6 @@
 		6AF7468E22FA1A6100D598A3 /* BarHopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarHopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF7469222FA1A6100D598A3 /* BarHopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHopUITests.swift; sourceTree = "<group>"; };
 		6AF7469422FA1A6100D598A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AF746A022FA1AA900D598A3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6AF746A222FA1AC000D598A3 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		6AF746A622FA1D1B00D598A3 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6AF746A822FA1D2A00D598A3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6AF746AB22FA1D8A00D598A3 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +174,6 @@
 				6AF7467E22FA1A6100D598A3 /* Info.plist */,
 				6AB754D422FB07C90018BC73 /* Fonts */,
 				6AF746A522FA1C6C00D598A3 /* Home Screen */,
-				6AF746A422FA1ACB00D598A3 /* Sign In */,
 				6AF746B522FA1EA800D598A3 /* CreateAccount */,
 				6AF746BB22FA1F7400D598A3 /* Patron Specific */,
 				6AF746BA22FA1F6C00D598A3 /* Bar Specific */,
@@ -202,15 +197,6 @@
 				6AF7469422FA1A6100D598A3 /* Info.plist */,
 			);
 			path = BarHopUITests;
-			sourceTree = "<group>";
-		};
-		6AF746A422FA1ACB00D598A3 /* Sign In */ = {
-			isa = PBXGroup;
-			children = (
-				6AF746A222FA1AC000D598A3 /* SignIn.storyboard */,
-				6AF746A022FA1AA900D598A3 /* SignInViewController.swift */,
-			);
-			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		6AF746A522FA1C6C00D598A3 /* Home Screen */ = {
@@ -301,7 +287,6 @@
 				A4B9917FC22B8971EF774F4C /* Pods-BarHopUITests.debug.xcconfig */,
 				CC966A7C3673AFBEE2CFA292 /* Pods-BarHopUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -413,7 +398,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AF746A322FA1AC000D598A3 /* SignIn.storyboard in Resources */,
 				6AF7467D22FA1A6100D598A3 /* LaunchScreen.storyboard in Resources */,
 				6AB754D622FB08530018BC73 /* HammersmithOne-Regular.ttf in Resources */,
 				6AF746C022FA200000D598A3 /* Queue.storyboard in Resources */,
@@ -543,7 +527,6 @@
 				6AF746C522FA204500D598A3 /* MenuViewController.swift in Sources */,
 				6AF746CC22FA20CD00D598A3 /* WaitingViewController.swift in Sources */,
 				6AF7467322FA1A6000D598A3 /* AppDelegate.swift in Sources */,
-				6AF746A122FA1AA900D598A3 /* SignInViewController.swift in Sources */,
 				6AF746AC22FA1D8A00D598A3 /* MapMenuViewController.swift in Sources */,
 				6AF746B922FA1EF100D598A3 /* VenmoSetUpViewController.swift in Sources */,
 				6AF746A922FA1D2A00D598A3 /* MapViewController.swift in Sources */,

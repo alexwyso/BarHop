@@ -12,19 +12,35 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "HammersmithOne-Regular", size: 28)!]
+        setUpProfileButton()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpProfileButton() {
+        let img = UIImage(named: "Screen-Shot-2014-12-02-at-11.14.42.png")
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        UIGraphicsBeginImageContextWithOptions(button.frame.size, false, img!.scale)
+        let rect  = CGRect(x: 0, y: 0, width: button.frame.size.width, height: button.frame.size.height)
+        UIBezierPath(roundedRect: rect, cornerRadius: rect.width/2).addClip()
+        img!.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let color = UIColor(patternImage: newImage!)
+        button.backgroundColor = color
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = UIColor.white.cgColor
+        let barButton = UIBarButtonItem()
+        barButton.customView = button
+        self.navigationItem.leftBarButtonItem = barButton
+        button.addTarget(self, action: #selector(profileClicked), for: .touchUpInside)
     }
-    */
+    
+    @objc func profileClicked() {
+        print("here")
+    }
 
 }

@@ -28,5 +28,11 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
 
+    @IBAction func loginPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapNavigationController") as! UINavigationController
+        nextViewController.modalPresentationStyle = .overCurrentContext
+        present(nextViewController, animated: true, completion: nil)
+    }
 }
 
