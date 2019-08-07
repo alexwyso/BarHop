@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HammersmithOne-Regular.ttf">
+            <string>HammersmithOne-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,31 +26,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aN-Jd-jHV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPT-cO-Z78">
-                                        <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="Zij-d8-eoB"/>
-                                            <constraint firstAttribute="width" constant="240" id="jtd-a4-FpT"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarHop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ky-dZ-5Zr">
-                                        <rect key="frame" x="89.5" y="568" width="235" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="235" id="5Yu-Ij-Xv0"/>
-                                            <constraint firstAttribute="height" constant="50" id="X1l-Rm-zCf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-Sl-YgJ">
+                                        <rect key="frame" x="87" y="325" width="240.5" height="246"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHn-Mc-IOx">
+                                                <rect key="frame" x="46" y="0.0" width="148" height="148"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="148" id="Z09-Vj-h4o"/>
+                                                    <constraint firstAttribute="width" constant="148" id="ain-kE-6ZN"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarHop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-D4-crd">
+                                                <rect key="frame" x="0.0" y="156" width="240.5" height="90"/>
+                                                <fontDescription key="fontDescription" name="HammersmithOne-Regular" family="HammersmithOne" pointSize="72"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33903202414512634" green="0.68758326768875122" blue="0.85885405540466309" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="KPT-cO-Z78" firstAttribute="centerX" secondItem="7aN-Jd-jHV" secondAttribute="centerX" id="3pi-Hw-LBM"/>
-                                    <constraint firstItem="0ky-dZ-5Zr" firstAttribute="centerX" secondItem="7aN-Jd-jHV" secondAttribute="centerX" id="S7j-0W-TJP"/>
-                                    <constraint firstItem="KPT-cO-Z78" firstAttribute="centerY" secondItem="7aN-Jd-jHV" secondAttribute="centerY" id="rK3-3k-eLy"/>
-                                    <constraint firstItem="0ky-dZ-5Zr" firstAttribute="top" secondItem="KPT-cO-Z78" secondAttribute="bottom" id="vAG-yf-q7e"/>
+                                    <constraint firstItem="ABM-Sl-YgJ" firstAttribute="centerX" secondItem="7aN-Jd-jHV" secondAttribute="centerX" id="bId-qA-Xob"/>
+                                    <constraint firstItem="ABM-Sl-YgJ" firstAttribute="centerY" secondItem="7aN-Jd-jHV" secondAttribute="centerY" id="hQN-jt-MAJ"/>
                                 </constraints>
                             </view>
                         </subviews>

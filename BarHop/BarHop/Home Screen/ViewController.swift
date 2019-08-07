@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var signInStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        signInStackView.alpha = 0
+        signInStackView.isHidden = true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.5,  delay: 1, options: .curveEaseOut, animations: {
+            self.signInStackView.isHidden = false
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 1, delay: 1.5, options: .curveEaseOut, animations: {
+            self.signInStackView.alpha = 1
+        }, completion: nil)
+    }
 
 }
 
