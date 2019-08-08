@@ -13,19 +13,23 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     var searching = false
     let searchController = UISearchController(searchResultsController: nil)
     
-    var allDrinks = [String]()
-    var filteredDrinks = [String]()
+    var allDrinks = [Drink(name: "Aperol Spritz", price: "$8.00"),
+                    Drink(name: "Arnold Palmer", price: "$3.50"),
+                    Drink(name: "Bacardi Mixed Drink", price: "$9.00"),
+                    Drink(name: "Bloody Mary", price: "$9.00"),
+                    Drink(name: "Bud Light", price: "$4.00"),
+                    Drink(name: "Budweiser", price: "$5.00"),
+                    Drink(name: "Corona", price: "$5.00"),
+                    Drink(name: "Captain Morgan Mixed Drink", price: "$9.00"),
+                    Drink(name: "Champagne", price: "$11.00"),
+                    Drink(name: "Dark and Stormy", price: "$11.00")]
+    var filteredDrinks = [Drink]()
     
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
-        allDrinks.append("Aha")
-        allDrinks.append("Oooo")
-        allDrinks.append("Bud Light")
         
         filteredDrinks = allDrinks
 
@@ -64,7 +68,8 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuTableViewCell
         
-        cell.drinkNameLabel.text = filteredDrinks[indexPath.row]
+        cell.drinkNameLabel.text = filteredDrinks[indexPath.row].name
+        cell.drinkPriceLabel.text = filteredDrinks[indexPath.row].price
         
         return cell
     }
@@ -73,11 +78,15 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         
         if let searchText = searchController.searchBar.text, searchText.count > 0 {
             
-            filteredDrinks = allDrinks.filter({( drink : String) -> Bool in
-                return drink.lowercased().contains(searchText.lowercased())
+            filteredDrinks = allDrinks.filter({( drink : Drink) -> Bool in
+                return drink.name!.lowercased().contains(searchText.lowercased())
             })
             
             table.reloadData()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

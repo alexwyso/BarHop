@@ -22,27 +22,36 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="65" id="MbS-uY-fax" customClass="MenuTableViewCell" customModule="BarHop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="71" id="MbS-uY-fax" customClass="MenuTableViewCell" customModule="BarHop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MbS-uY-fax" id="PIF-MP-nXM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGz-WA-ovw">
-                                                    <rect key="frame" x="20" y="22" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="20" y="24.5" width="47" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJq-hG-LFT">
+                                                    <rect key="frame" x="354.5" y="26" width="39.5" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="AJq-hG-LFT" firstAttribute="centerY" secondItem="PIF-MP-nXM" secondAttribute="centerY" id="7aV-ck-PMX"/>
+                                                <constraint firstItem="AJq-hG-LFT" firstAttribute="trailing" secondItem="PIF-MP-nXM" secondAttribute="trailingMargin" id="GZc-k6-8AX"/>
                                                 <constraint firstItem="pGz-WA-ovw" firstAttribute="centerY" secondItem="PIF-MP-nXM" secondAttribute="centerY" id="drc-LC-Egg"/>
                                                 <constraint firstItem="pGz-WA-ovw" firstAttribute="leading" secondItem="PIF-MP-nXM" secondAttribute="leadingMargin" id="rXo-Dx-dDP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="drinkNameLabel" destination="pGz-WA-ovw" id="Joa-eE-VPi"/>
+                                            <outlet property="drinkPriceLabel" destination="AJq-hG-LFT" id="ENO-bl-ODD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

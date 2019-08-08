@@ -10,4 +10,5 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var drinkNameLabel: UILabel!
+    @IBOutlet weak var drinkPriceLabel: UILabel!
 }
