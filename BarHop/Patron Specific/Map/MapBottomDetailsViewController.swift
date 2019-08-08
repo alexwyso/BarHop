@@ -18,6 +18,8 @@ class MapBottomDetailsViewController: UIViewController {
     
     var delegate: HandleLocationDismissProtocol?
     
+    @IBOutlet weak var backgroundView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,9 @@ class MapBottomDetailsViewController: UIViewController {
         dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dimEffectView.alpha = 1
         view.addSubview(dimEffectView)
-        //view.sendSubviewToBack(dimEffectView)
+        
+        backgroundView.layer.borderWidth = 1
+        backgroundView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,
