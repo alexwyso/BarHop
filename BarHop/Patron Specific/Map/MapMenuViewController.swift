@@ -26,7 +26,7 @@ class MapMenuViewController: UIViewController {
         dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dimEffectView.alpha = 1
         view.addSubview(dimEffectView)
-        //view.sendSubviewToBack(dimEffectView)
+        view.sendSubviewToBack(dimEffectView)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,

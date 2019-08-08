@@ -97,10 +97,19 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol, HandleLoca
         })
     }
     
-    func locationDismissed() {
+    func locationDismissed(done: Bool) {
         UIView.animate(withDuration: 0.5, animations: {
             self.dimEffectView.alpha = 0
         })
+        
+        if (done) {
+            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+            let backItem = UIBarButtonItem()
+            backItem.title = "Map"
+            navigationItem.backBarButtonItem = backItem
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

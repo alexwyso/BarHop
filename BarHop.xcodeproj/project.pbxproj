@@ -11,6 +11,7 @@
 		6AB754D622FB08530018BC73 /* HammersmithOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB754D522FB08530018BC73 /* HammersmithOne-Regular.ttf */; };
 		6AB754D722FB08530018BC73 /* HammersmithOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB754D522FB08530018BC73 /* HammersmithOne-Regular.ttf */; };
 		6AB754D822FB08530018BC73 /* HammersmithOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AB754D522FB08530018BC73 /* HammersmithOne-Regular.ttf */; };
+		6AEBB9EB22FCA834004C86D8 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEBB9EA22FCA834004C86D8 /* MenuTableViewCell.swift */; };
 		6AF7467322FA1A6000D598A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7467222FA1A6000D598A3 /* AppDelegate.swift */; };
 		6AF7467522FA1A6000D598A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7467422FA1A6000D598A3 /* ViewController.swift */; };
 		6AF7467822FA1A6000D598A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF7467622FA1A6000D598A3 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		5FECB0BFA87D641C6A180BF4 /* Pods_BarHop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarHop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB754D522FB08530018BC73 /* HammersmithOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HammersmithOne-Regular.ttf"; sourceTree = "<group>"; };
+		6AEBB9EA22FCA834004C86D8 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		6AF7466F22FA1A6000D598A3 /* BarHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF7467222FA1A6000D598A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF7467422FA1A6000D598A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -260,9 +262,10 @@
 		6AF746C322FA203100D598A3 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				6AF746C422FA204500D598A3 /* MenuViewController.swift */,
-				6AF746C622FA205400D598A3 /* MenuPopoverViewController.swift */,
 				6AF746C822FA205F00D598A3 /* Menu.storyboard */,
+				6AF746C422FA204500D598A3 /* MenuViewController.swift */,
+				6AEBB9EA22FCA834004C86D8 /* MenuTableViewCell.swift */,
+				6AF746C622FA205400D598A3 /* MenuPopoverViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				6AF746B022FA1E7100D598A3 /* CreateAccountViewController.swift in Sources */,
 				6AF746C722FA205400D598A3 /* MenuPopoverViewController.swift in Sources */,
+				6AEBB9EB22FCA834004C86D8 /* MenuTableViewCell.swift in Sources */,
 				6AF7467522FA1A6000D598A3 /* ViewController.swift in Sources */,
 				6AF746AE22FA1DA600D598A3 /* MapBottomDetailsViewController.swift in Sources */,
 				6AF746C222FA201500D598A3 /* QueueMenuViewController.swift in Sources */,

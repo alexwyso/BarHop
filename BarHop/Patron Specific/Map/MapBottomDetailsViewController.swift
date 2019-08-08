@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HandleLocationDismissProtocol {
-    func locationDismissed()
+    func locationDismissed(done: Bool)
 }
 
 class MapBottomDetailsViewController: UIViewController {
@@ -28,7 +28,7 @@ class MapBottomDetailsViewController: UIViewController {
         dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dimEffectView.alpha = 1
         view.addSubview(dimEffectView)
-        
+        view.sendSubviewToBack(dimEffectView)
         backgroundView.layer.borderWidth = 1
         backgroundView.layer.borderColor = UIColor.lightGray.cgColor
     }
@@ -38,7 +38,17 @@ class MapBottomDetailsViewController: UIViewController {
         var touch: UITouch? = touches.first
         if touch?.view == dimEffectView {
             self.dismiss(animated: true, completion: nil)
-            self.delegate?.locationDismissed()
+            self.delegate?.locationDismissed(done: false)
         }
+    }
+    
+    @IBAction func xPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.locationDismissed(done: false)
+    }
+    
+    @IBAction func checkInPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.locationDismissed(done: true)
     }
 }

@@ -99,6 +99,9 @@
                                                             <integer key="value" value="8"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="checkInPressed:" destination="nIU-mZ-6jc" eventType="touchUpInside" id="FC9-MK-vYl"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="210 S 40th Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUU-uo-bPn">
                                                     <rect key="frame" x="30" y="47" width="135" height="21"/>
@@ -118,12 +121,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9j-ps-dev">
+                                                    <rect key="frame" x="339" y="-4" width="67" height="67"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="67" id="HW0-3w-9zN"/>
+                                                        <constraint firstAttribute="width" constant="67" id="pBG-je-JRp"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="cancel-solid-icon"/>
+                                                    <connections>
+                                                        <action selector="xPressed:" destination="nIU-mZ-6jc" eventType="touchUpInside" id="RG7-RB-sWf"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="0.10415774828767123" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="0.30348351883561642" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="IDF-jc-P4a" firstAttribute="leading" secondItem="j3Y-wQ-Lbc" secondAttribute="leading" constant="30" id="AAZ-2w-6rr"/>
                                                 <constraint firstItem="sWw-HU-TcP" firstAttribute="top" secondItem="rYf-1k-dvB" secondAttribute="bottom" constant="20" id="BgF-xi-ZkJ"/>
                                                 <constraint firstItem="OUU-uo-bPn" firstAttribute="leading" secondItem="j3Y-wQ-Lbc" secondAttribute="leading" constant="30" id="Bjx-5I-r2X"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z9j-ps-dev" secondAttribute="trailing" constant="8" id="Ehu-eN-pIx"/>
+                                                <constraint firstItem="Z9j-ps-dev" firstAttribute="top" secondItem="j3Y-wQ-Lbc" secondAttribute="top" constant="-4" id="HSI-Qj-DjQ"/>
                                                 <constraint firstItem="rYf-1k-dvB" firstAttribute="leading" secondItem="j3Y-wQ-Lbc" secondAttribute="leading" constant="30" id="NYJ-Hb-hvf"/>
                                                 <constraint firstItem="rYf-1k-dvB" firstAttribute="top" secondItem="OUU-uo-bPn" secondAttribute="bottom" constant="3" id="OPi-Tx-eQv"/>
                                                 <constraint firstAttribute="bottom" secondItem="sWw-HU-TcP" secondAttribute="bottom" constant="30" id="Qrn-s2-AF1"/>
@@ -193,4 +209,7 @@
             <point key="canvasLocation" x="79.710144927536234" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel-solid-icon" width="614" height="614"/>
+    </resources>
 </document>
