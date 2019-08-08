@@ -83,6 +83,9 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
             })
             
             table.reloadData()
+        } else {
+            filteredDrinks = allDrinks
+            table.reloadData()
         }
     }
     

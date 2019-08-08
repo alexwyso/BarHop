@@ -51,17 +51,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-0N-R1K">
                                 <rect key="frame" x="0.0" y="0.0" width="310.5" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TIj-0N-R1K" firstAttribute="width" secondItem="kwL-8m-He5" secondAttribute="width" multiplier="0.75" id="4JY-uC-dUx"/>
                             <constraint firstAttribute="bottom" secondItem="TIj-0N-R1K" secondAttribute="bottom" id="MPB-Gb-TtR"/>
+                            <constraint firstItem="orn-1K-bie" firstAttribute="trailing" secondItem="TIj-0N-R1K" secondAttribute="trailing" constant="103.5" id="qFM-cf-Y4p"/>
                             <constraint firstItem="TIj-0N-R1K" firstAttribute="leading" secondItem="orn-1K-bie" secondAttribute="leading" id="xca-28-vIP"/>
                             <constraint firstItem="TIj-0N-R1K" firstAttribute="top" secondItem="kwL-8m-He5" secondAttribute="top" id="zIy-ho-Kb3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="orn-1K-bie"/>
                     </view>
+                    <connections>
+                        <outlet property="rightConstraint" destination="qFM-cf-Y4p" id="lz9-9w-MyC"/>
+                        <outlet property="wholeView" destination="TIj-0N-R1K" id="rYx-0l-iQs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPL-mz-m7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -88,7 +88,7 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol, HandleLoca
         if let nextViewController = nextViewController as? MapMenuViewController {
             nextViewController.delegate = self
         }
-        present(nextViewController, animated: true, completion: nil)
+        present(nextViewController, animated: false, completion: nil)
     }
     
     func menuDismissed() {
