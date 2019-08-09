@@ -20,12 +20,15 @@ class MapMenuViewController: UIViewController {
 
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     @IBOutlet weak var wholeView: UIView!
+    @IBOutlet weak var widthConstraints: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
+        
+        widthConstraints.constant = screenWidth * 0.75
         
         rightConstraint.constant = screenWidth
     
