@@ -68,22 +68,30 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         dimEffectView.alpha = 0
         view.addSubview(dimEffectView)
         
-        //create a new button
-        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        //set image for button
-        button.setImage(UIImage(named: "216477-64.png"), for: [])
-        //add function for button
-        button.addTarget(self, action: #selector(checkoutButtonPressed), for: UIControl.Event.touchUpInside)
-        //set frame
+        let img = UIImage(named: "216477-64.png")
+        let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
-        let barButton = UIBarButtonItem(customView: button)
-        //assign button to navigationbar
+        UIGraphicsBeginImageContextWithOptions(button.frame.size, false, img!.scale)
+        let rect  = CGRect(x: 0, y: 0, width: button.frame.size.width, height: button.frame.size.height)
+        UIBezierPath(roundedRect: rect, cornerRadius: rect.width/2).addClip()
+        img!.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let color = UIColor(patternImage: newImage!)
+        button.backgroundColor = color
+        let barButton = UIBarButtonItem()
+        barButton.customView = button
         self.navigationItem.rightBarButtonItem = barButton
+        button.addTarget(self, action: #selector(checkoutButtonPressed), for: .touchUpInside)
     }
     
     @objc func checkoutButtonPressed() {
-        print("here")
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "Review") as! ReviewCartViewController
+        let backItem = UIBarButtonItem()
+        backItem.title = "Menu"
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
