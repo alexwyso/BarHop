@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
+class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, HandlePriceEntryDismissProtocol {
     
     var searching = false
     let searchController = UISearchController(searchResultsController: nil)
@@ -26,6 +26,8 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     var filteredDrinks = [Drink]()
     
     @IBOutlet weak var table: UITableView!
+    
+    let dimEffectView = UIView()
     
     override func viewDidLoad() {
         
@@ -59,6 +61,12 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         // Establish the necessary delegation
         table.delegate = self
         table.dataSource = self
+        
+        dimEffectView.backgroundColor = .black
+        dimEffectView.frame = view.bounds
+        dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dimEffectView.alpha = 0
+        view.addSubview(dimEffectView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,5 +99,27 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dimEffectView.alpha = 0.6
+        })
+        
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "MenuPopover")
+        
+        nextViewController.modalPresentationStyle = .overCurrentContext
+        if let nextViewController = nextViewController as? MenuPopoverViewController {
+            nextViewController.delegate = self
+        }
+        present(nextViewController, animated: true, completion: nil)
+    }
+    
+    func priceEntryDismissed() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.dimEffectView.alpha = 0
+        })
     }
 }

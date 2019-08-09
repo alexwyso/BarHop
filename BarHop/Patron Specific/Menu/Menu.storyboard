@@ -74,5 +74,107 @@
             </objects>
             <point key="canvasLocation" x="182.60869565217394" y="73.660714285714278"/>
         </scene>
+        <!--Menu Popover View Controller-->
+        <scene sceneID="byq-Ot-ac4">
+            <objects>
+                <viewController storyboardIdentifier="MenuPopover" id="eUa-cK-Yd1" customClass="MenuPopoverViewController" customModule="BarHop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TaT-rS-de3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmv-jy-Lmy">
+                                <rect key="frame" x="30" y="306" width="354" height="284.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ib-Pf-NKJ">
+                                        <rect key="frame" x="15" y="219.5" width="324" height="50"/>
+                                        <color key="backgroundColor" red="0.35103237628936768" green="0.71497589349746704" blue="0.89022749662399292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qtJ-Qk-wtg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzY-Gv-Lcg">
+                                        <rect key="frame" x="15" y="49" width="324" height="100.5"/>
+                                        <string key="text">Enter the price you are willing to pay 
+for this order. This price determines your spot in the queue.
+
+Note: Your Venmo account will be charged 
+when you reach the front of the queue.</string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.59107150534795416" green="0.5874487122149471" blue="0.6062439241558375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Minimum $5.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gc1-JN-ZXC">
+                                        <rect key="frame" x="15" y="164.5" width="324" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AwO-Zy-jPf"/>
+                                        </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budweiser" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw3-cS-J4T">
+                                        <rect key="frame" x="15" y="15" width="324" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.22505061971276352" green="0.22367124034445102" blue="0.23082752187157363" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bzY-Gv-Lcg" secondAttribute="trailing" constant="15" id="IBM-OH-98z"/>
+                                    <constraint firstItem="Gc1-JN-ZXC" firstAttribute="top" secondItem="bzY-Gv-Lcg" secondAttribute="bottom" constant="15" id="Iz6-aH-0uT"/>
+                                    <constraint firstItem="Mw3-cS-J4T" firstAttribute="leading" secondItem="lmv-jy-Lmy" secondAttribute="leading" constant="15" id="NT9-y2-cE1"/>
+                                    <constraint firstItem="bzY-Gv-Lcg" firstAttribute="leading" secondItem="lmv-jy-Lmy" secondAttribute="leading" constant="15" id="Ovb-EG-O0a"/>
+                                    <constraint firstItem="Gc1-JN-ZXC" firstAttribute="leading" secondItem="lmv-jy-Lmy" secondAttribute="leading" constant="15" id="PVs-ZP-JD8"/>
+                                    <constraint firstItem="bzY-Gv-Lcg" firstAttribute="top" secondItem="Mw3-cS-J4T" secondAttribute="bottom" constant="10" id="SL0-Tx-b9t"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Ib-Pf-NKJ" secondAttribute="bottom" constant="15" id="UfL-NY-V5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mw3-cS-J4T" secondAttribute="trailing" constant="15" id="bmt-Iu-DnM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gc1-JN-ZXC" secondAttribute="trailing" constant="15" id="cDu-VI-8uA"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Ib-Pf-NKJ" secondAttribute="trailing" constant="15" id="ehJ-6e-yFz"/>
+                                    <constraint firstItem="Mw3-cS-J4T" firstAttribute="top" secondItem="lmv-jy-Lmy" secondAttribute="top" constant="15" id="n1Y-Vf-v6V"/>
+                                    <constraint firstItem="7Ib-Pf-NKJ" firstAttribute="leading" secondItem="lmv-jy-Lmy" secondAttribute="leading" constant="15" id="qwr-bA-wua"/>
+                                    <constraint firstItem="7Ib-Pf-NKJ" firstAttribute="top" secondItem="Gc1-JN-ZXC" secondAttribute="bottom" constant="15" id="waA-6a-zWM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lmv-jy-Lmy" firstAttribute="leading" secondItem="Gdw-cC-Ybq" secondAttribute="leading" constant="30" id="1XV-SW-VEV"/>
+                            <constraint firstItem="lmv-jy-Lmy" firstAttribute="centerY" secondItem="TaT-rS-de3" secondAttribute="centerY" id="IJF-ho-d9t"/>
+                            <constraint firstItem="lmv-jy-Lmy" firstAttribute="centerX" secondItem="TaT-rS-de3" secondAttribute="centerX" id="JCp-Zu-Ew4"/>
+                            <constraint firstItem="Gdw-cC-Ybq" firstAttribute="trailing" secondItem="lmv-jy-Lmy" secondAttribute="trailing" constant="30" id="VJL-sR-rTe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gdw-cC-Ybq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ae-Sr-d57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028.985507246377" y="73.660714285714278"/>
+        </scene>
     </scenes>
 </document>
