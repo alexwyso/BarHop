@@ -29,11 +29,16 @@ class MenuPopoverViewController: UIViewController {
         view.sendSubviewToBack(dimEffectView)
     }
     
+    @IBAction func submitPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.priceEntryDismissed()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?) {
         var touch: UITouch? = touches.first
         if touch?.view == dimEffectView {
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             self.delegate?.priceEntryDismissed()
         }
     }

@@ -67,6 +67,23 @@ class MenuViewController: UIViewController, UISearchResultsUpdating, UISearchBar
         dimEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dimEffectView.alpha = 0
         view.addSubview(dimEffectView)
+        
+        //create a new button
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        //set image for button
+        button.setImage(UIImage(named: "216477-64.png"), for: [])
+        //add function for button
+        button.addTarget(self, action: #selector(checkoutButtonPressed), for: UIControl.Event.touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @objc func checkoutButtonPressed() {
+        print("here")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
