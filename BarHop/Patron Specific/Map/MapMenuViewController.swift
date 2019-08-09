@@ -54,7 +54,7 @@ class MapMenuViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        UIView.animate(withDuration: 0.75) {
+        UIView.animate(withDuration: 0.5) {
             self.widthConstraints.constant = screenWidth * 0.75
             self.rightConstraint.constant = screenWidth / 4
             self.view.layoutIfNeeded()
