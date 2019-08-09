@@ -81,7 +81,6 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol, HandleLoca
         
         UIView.animate(withDuration: 0.5, animations: {
             self.dimEffectView.alpha = 0.6
-            //self.navigationController?.navigationBar.alpha = 0.3
         })
         
         nextViewController.modalPresentationStyle = .overCurrentContext
@@ -144,7 +143,7 @@ class MapViewController: UIViewController, HandleMenuDismissProtocol, HandleLoca
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = false
         } else {
             annotationView!.annotation = annotation

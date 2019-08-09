@@ -12,21 +12,32 @@ protocol HandleMenuDismissProtocol {
     func menuDismissed()
 }
 
-class MapMenuViewController: UIViewController {
+class MapMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let dimEffectView = UIView()
     
     var delegate: HandleMenuDismissProtocol?
 
+    @IBOutlet weak var table: UITableView!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     @IBOutlet weak var wholeView: UIView!
     @IBOutlet weak var widthConstraints: NSLayoutConstraint!
+    
+    let labels = ["Map", "Transaction History", "Venmo Account Settings", "Edit Personal Information", "Log Out"]
+    let pics = ["Pin-512.png", "iconfinder_Dollar_1737376.png", "iconfinder_venmo_4691351.png", "iconfinder_new-24_103173.png", "iconfinder_log-out_3324993.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
+        
+        table.delegate = self
+        table.dataSource = self
+        
+        table.isScrollEnabled = false
+        
+        table.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         
         widthConstraints.constant = screenWidth * 0.75
         
@@ -44,9 +55,26 @@ class MapMenuViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         UIView.animate(withDuration: 0.75) {
+            self.widthConstraints.constant = screenWidth * 0.75
             self.rightConstraint.constant = screenWidth / 4
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return labels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "ButtonCell") as! MapButtonsTableViewCell
+        cell.accessoryType = .disclosureIndicator
+        cell.optionLabel.text = labels[indexPath.row]
+        cell.optionImage.image = UIImage(named: pics[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -66,6 +94,5 @@ class MapMenuViewController: UIViewController {
             }
             
         }
-        
     }
 }
