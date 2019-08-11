@@ -1,5 +1,5 @@
 # BarHop
-Steps:
+Application Flow:
 
   -User checks signs in/creates an account with BarHop
   
