@@ -13,7 +13,12 @@ class ReviewCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
+    @IBAction func placeOrderPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Confirmation", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "Waiting") as! WaitingViewController
+        present(nextViewController, animated: true)
+    }
 }
