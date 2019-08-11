@@ -13,7 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var signInStackView: UIStackView!
-    // commit test
+    // commit test again!!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
